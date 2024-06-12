@@ -22,6 +22,9 @@ class CalViewModel: ViewModel() {
     }
 
     fun addDot(dot: String){
+        if (clear.value){
+            number.value = "0"
+        }
         if (!number.value.contains(".")) {
             number.value += dot
             clear.value = false
