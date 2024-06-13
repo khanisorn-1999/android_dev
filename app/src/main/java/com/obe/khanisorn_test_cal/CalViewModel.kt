@@ -51,6 +51,7 @@ class CalViewModel: ViewModel() {
             return
         }
         if (adjacentEqual.value){
+            operand1.value = number.value
             val result = calculate(operand1.value, operand3.value, operation.value)
             number.value = trim(result)
             operand1.value = result.toString()
@@ -67,7 +68,6 @@ class CalViewModel: ViewModel() {
                 adjacentEqual.value = true
                 clear.value = true }
         }
-
     }
 
     private fun trim(number: Double): String{
